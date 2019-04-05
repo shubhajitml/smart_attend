@@ -1,0 +1,1 @@
+SELECT `fk_subject_id`, COUNT(*) as attendance_count FROM attendance_sheet WHERE fk_student_id = 1 GROUP BY `fk_subject_id`
