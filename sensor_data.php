@@ -1,11 +1,10 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 include_once('connection.php');
-// echo"hi";
 // $response = file_get_contents("php://input");
 
-// in fingerprint registration phase
-if(isset($_GET['reg_no']) && !empty($_GET['reg_no']) && isset($_GET['fing_serial']) && !empty($_GET['fing_serial'])&& isset($_GET['is_student'])&& !empty($_GET['is_student']))
+// in fingerprint enrollment phase
+if(isset($_GET['reg_no']) && !empty($_GET['reg_no']) && isset($_GET['fing_serial']) && !empty($_GET['fing_serial'])&& isset($_GET['is_student']))
     {
         // check if is student
         if($_GET['is_student'] == 1){
@@ -25,7 +24,7 @@ if(isset($_GET['reg_no']) && !empty($_GET['reg_no']) && isset($_GET['fing_serial
         else if($_GET['is_student'] == 0){
             $reg_no     = $_GET['reg_no'];
             $fing_serial = $_GET['fing_serial'];
-            $stu_stmt   = $conn->prepare("UPDATE faculty_users SET fac_fing_serial=$fing_serial WHERE reg_no=".$reg_no);
+            $stu_stmt   = $conn->prepare("UPDATE faculty_users SET fac_fing_serial=$fing_serial WHERE fac_reg_no=".$reg_no);
             if ($stu_stmt->execute())
                 {
                     echo 'Faculty record successfully entered';
@@ -42,7 +41,7 @@ else if(isset($_GET['fing_serial']) && !empty($_GET['fing_serial']))
 {
     // serial id to search
    $fing_serial = $_GET['fing_serial'];
-    echo $fing_serial;
+    // echo $fing_serial;
     // search query for student and faculty 
    $stu_fing_query = "SELECT * FROM students WHERE fing_serial = :fing_serial";
    $fac_fing_query = "SELECT * FROM faculty_users WHERE fing_serial = :fing_serial";
