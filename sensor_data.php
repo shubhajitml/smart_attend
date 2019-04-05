@@ -43,7 +43,7 @@ else if(isset($_GET['fing_serial']) && !empty($_GET['fing_serial']))
     // id to search
    $fing_serial = $_GET['fing_serial'];
     
-    // search query
+    // search query for student and faculty 
    $stu_fing_query = "SELECT * FROM students WHERE fing_serial = :fing_serial";
    $fac_fing_query = "SELECT * FROM faculty_users WHERE fing_serial = :fing_serial";
    
@@ -115,7 +115,7 @@ else if(isset($_GET['fing_serial']) && !empty($_GET['fing_serial']))
 }
 
 else{
-    echo "Please send Registration no and Fingerprint Serial";
+    echo "Please send Registration No. and Fingerprint Serial";
     exit(0);
     }
 ?>
