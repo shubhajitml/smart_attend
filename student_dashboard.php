@@ -14,9 +14,8 @@
 			
 
 
-            $stmt = $conn->prepare("INSERT INTO students(`reg_no`,'stu_fing_serial', `name`, `branch`, `email`,`mobile`, `created_by`, `created_on` )
+            $stmt = $conn->prepare("INSERT INTO students(`reg_no`,'stu_fing_serial', `name`, `branch`, `email`,`mobile`, `created_by`, `created_on`)
             VALUES(:regno,:stu_fing_serial, :nam, :branch, :email, :mobile, :creator, :creationtime)");
-            
             if($stmt->execute(array(
 			"regno" => $regd_no,
 			'stu_fing_serial' => $stu_fing_serial,

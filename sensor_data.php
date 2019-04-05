@@ -1,7 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 include_once('connection.php');
-
+echo"hi";
 // $response = file_get_contents("php://input");
 
 // in fingerprint registration phase
@@ -40,9 +40,9 @@ if(isset($_GET['reg_no']) && !empty($_GET['reg_no']) && isset($_GET['fing_serial
 // in fingerprint validation phase
 else if(isset($_GET['fing_serial']) && !empty($_GET['fing_serial']))
 {
-    // id to search
+    // serial id to search
    $fing_serial = $_GET['fing_serial'];
-    
+    echo $fing_serial;
     // search query for student and faculty 
    $stu_fing_query = "SELECT * FROM students WHERE fing_serial = :fing_serial";
    $fac_fing_query = "SELECT * FROM faculty_users WHERE fing_serial = :fing_serial";
@@ -55,6 +55,8 @@ else if(isset($_GET['fing_serial']) && !empty($_GET['fing_serial']))
    //set your serial id to the query serial id
    $stu_fing_exec = $stu_fing_result->execute(array(":fing_serial"=>$fing_serial));
    $fac_fing_exec = $fac_fing_result->execute(array(":fing_serial"=>$fing_serial));
+   echo $stu_fing_exec;
+   echo $fac_fing_exec;
    
 // if is student fingerprint
    if($stu_fing_exec)
