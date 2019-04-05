@@ -1,7 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 include_once('connection.php');
-echo"hi";
+// echo"hi";
 // $response = file_get_contents("php://input");
 
 // in fingerprint registration phase
@@ -76,11 +76,11 @@ else if(isset($_GET['fing_serial']) && !empty($_GET['fing_serial']))
            'date'=>date('Y-m-d'),
            'time'=>date('H:i:s')
            ))){
-               echo 'Success';
+               echo 'Stu Success';
            }
            else
            {
-               echo 'NOT Success';
+               echo 'Stu NOT Success';
            }
         }
 
@@ -101,11 +101,11 @@ else if(isset($_GET['fing_serial']) && !empty($_GET['fing_serial']))
            'date'=>date('Y-m-d'),
            'time'=>date('H:i:s')
            ))){
-               echo 'Success';
+               echo 'Fac Success';
            }
            else
            {
-               echo 'NOT Success';
+               echo 'Fac NOT Success';
            }
     }
    else{
