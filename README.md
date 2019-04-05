@@ -1,14 +1,14 @@
 # smart_attendance
-## Biometric Based Attendance System
-1. put the `smart_attendance` folder in `var/www/html/`(for linux)
-2. change the username(phpmyadmin) and password(1235) in `connection.php` with your credentials
-3. create a database named `biometric` and import the `biometric.sql` file
+## Biometric Based Attendance System<br>
+1. put the `smart_attendance` folder in `var/www/html/`(for linux) or &nbsp; `C:\wamp\www\` or &nbsp;`C:\xampp\htdocs\` (for Windows)<br>
+2. change the username(phpmyadmin) and password(1235) in `connection.php` with your credentials<br>
+3. create a database named `biometric` and import the `biometric.sql` file<br>
 
-**_you are all set to go!!_**
+**_you are all set to go!!_**<br>
 
 Note: `sensor_data.php` is being used for receiving remote data <br>
 user name: mukeshbathre@gcekjr.ac.in <br>
-password: 09876
+password: 09876<br>
 
 ## Basic GIT commands
 <br>**0. Pull from remote**:&nbsp; `git pull`<br>
