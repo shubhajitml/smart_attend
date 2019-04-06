@@ -18,3 +18,7 @@ password: 09876<br>
 <br>**3. Commit the Staged files (a message is mandatory)** : &nbsp; `git commit "your message here (e.g. sensor_data script added)"` <br>
 <br>**4. Push the Staged Files (this will ask for authentication)**:&nbsp;  `git push` <br>
 
+## For First Time
+<br>**1. Initialize the local repo**:&nbsp; Goto your project directory and type &nbsp;  `git init` <br>
+<br>**2. Connect to remote**:&nbsp;  `git remote add origin https://github.com/shubhajitml/smart_attendance.git` <br>
+<br>**3. Push your branch to Github:** &nbsp;  `git push origin master` <br>
