@@ -12,8 +12,7 @@
             $fac = $_POST['fac'];
 
 
-            $stmt = $conn->prepare("INSERT INTO subjects(`sub_code`, 'subject_name', `branch`, `semester`,`fk_faculty_id`)
-            VALUES(:sub,:nam, :brn, :sem, :fac_id)");
+            $stmt = $conn->prepare("INSERT INTO subjects(`subject_code`, 'subject_name', `branch`, `semester`,`fk_faculty_id`) VALUES(:sub,:nam, :brn, :sem, :fac_id)");
             
             if($stmt->execute(array(
             "sub" => $sub_code,
@@ -36,35 +35,41 @@
         }
 	}
 	
-	$stmt = $conn->prepare("SELECT * FROM faculty_users");
-	$stmt->execute();
+	$stmt = $conn->prepare("SELECT * FROM subjects");
+	$stmt->execute();	
+	$stmt2 = $conn->prepare("SELECT * FROM faculty_users");
+	$stmt2->execute();	
 
     $faculty_data = "";
     $subject_data = "";
     $option_data = "";
-	if($stmt->rowCount() > 0)
+	
+	if($stmt2->rowCount() > 0)
 	{
-		while($row = $stmt->fetch(PDO::FETCH_ASSOC))
+		while($row2 = $stmt2->fetch(PDO::FETCH_ASSOC) )
 		{
-            $option_data .= "<option value=".$row['fac_id'].">".$row['name']."</option>";
-			$faculty_data .= '<tr>
-									<td>'.$row['fac_reg_no'].'</td>
-                                    <td>'.$row['name'].'</td>
-                                    <td>'.$row['email'].'</td>
-                                    <td>'.$row['mobile'].'</td>
-									<td>'.$row['branch'].'</td>                                    
-                                </tr>';
                                 
-            $subject_data .= '<tr>
-									<td>'.$row['sub_code'].'</td>
-                                    <td>'.$row['subject_name'].'</td>
-                                    <td>'.$row['branch'].'</td>
-                                    <td>'.$row['semester'].'</td>
-									<td>'.$row['fk_faculty_id'].'</td>                                    
-                                </tr>';
+            $option_data .= "<option value=".$row2['fac_id'].">".$row2['name']."</option>";
+
                                 
 		}
 	}
+	if($stmt->rowCount() > 0)
+	{
+		
+		while($row = $stmt->fetch(PDO::FETCH_ASSOC))
+		{
+                                
+            $subject_data .= '<tr>
+									<td>'.$row['subject_code'].'</td>
+									<td>'.$row['subject_name'].'</td>
+                                    <td>'.$row['branch'].'</td>
+                                    <td>'.$row['semester'].'</td>
+									<td>'.$row['fk_faculty_id'].'</td>                                    
+								</tr>';                     
+		}
+	}
+	
 ?>
     <main role="main" class="container">
 		<section>
@@ -110,12 +115,11 @@
 							<table class="table table-bordered table-striped">
 								<thead>
 									<tr>
-										<th>Subject Id</th>
 										<th>Subject Code</th>
 										<th>Subject Name</th>
                                         <th>Branch</th>
                                         <th>Semester</th>
-                                        <th>Faculty Name</th>
+                                        <th>Faculty ID</th>
                                         
 									</tr>									
 								</thead>

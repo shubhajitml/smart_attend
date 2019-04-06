@@ -43,12 +43,13 @@
 	$stmt = $conn->prepare("SELECT * FROM faculty_users");
 	$stmt->execute();
 
-	$student_data = "";
+	$faculty_data = "";
 	if($stmt->rowCount() > 0)
 	{
 		while($row = $stmt->fetch(PDO::FETCH_ASSOC))
 		{
-			$student_data .= '<tr>
+			$faculty_data .= '<tr>
+									<td>'.$row['fac_id'].'</td>
 									<td>'.$row['fac_reg_no'].'</td>
 									<td>'.$row['fac_fing_serial'].'</td>
 									<td>'.$row['name'].'</td>
@@ -106,6 +107,7 @@
 							<table class="table table-bordered table-striped">
 								<thead>
 									<tr>
+										<th>Faculty Id</th>
 										<th>Reg. No.</th>
 										<th>Faculty Serial</th>
 										<th>Name</th>
@@ -115,7 +117,7 @@
 									</tr>									
 								</thead>
 								<tbody>
-									<?php echo $student_data; ?>
+									<?php echo $faculty_data; ?>
 								</tbody>
 							</table>
 						</div>
