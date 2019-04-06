@@ -11,14 +11,17 @@ user name: mukeshbathre@gcekjr.ac.in <br>
 password: 09876<br>
 
 ## Basic GIT commands
-<br>**0. Pull from remote**:&nbsp; `git pull`<br>
+**0. Pull from remote**:&nbsp; `git pull`<br>
 <br>**1. Check status**: &nbsp;`git status` <br>
 <br>**2. Add all unstaged Files**: &nbsp; `git add .` <br>
 <br>**or 2. Add specific unstaged Files**:&nbsp;  `git add sensor_data.php` <br>
 <br>**3. Commit the Staged files (a message is mandatory)** : &nbsp; `git commit "your message here (e.g. sensor_data script added)"` <br>
 <br>**4. Push the Staged Files (this will ask for authentication)**:&nbsp;  `git push` <br>
+## Create a remote, empty repository on Github
+**0. Login into github, Create an empty repo and copy the clone the url**&nbsp; <br>
 
 ## Using GIT for first time
-<br>**1. Initialize the local repo**:&nbsp; Goto your project directory and type &nbsp;  `git init` <br>
+**1. Initialize the local repo**:&nbsp; Goto your project directory and type &nbsp;  `git init` <br>
 <br>**2. Connect to remote**:&nbsp;  `git remote add origin https://github.com/shubhajitml/smart_attendance.git` <br>
 <br>**3. Push your branch to Github:** &nbsp;  `git push origin master` <br>
+
