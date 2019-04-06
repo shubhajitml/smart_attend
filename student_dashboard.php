@@ -1,24 +1,23 @@
 <?php
 	include_once("header.php");
     if(isset($_POST['submit']))
-    { //print_r($_POST);
+    { 
         if(isset($_POST['regd_no']) && !empty($_POST['regd_no'])&& isset($_POST['stu_fing_serial']) && !empty($_POST['stu_fing_serial'])  && isset($_POST['nm']) && !empty($_POST['nm']) && isset($_POST['brn']) && !empty($_POST['brn'])&& isset($_POST['mail']) && !empty($_POST['mail'])&& isset($_POST['mob']) && !empty($_POST['mob']) )
         {
             print_r($_POST);
-            $regd_no = $_POST['regd_no'];
+			$regd_no = $_POST['regd_no'];
+			$stu_fing_serial = $_POST['stu_fing_serial'];
             $nm = $_POST['nm'];
             $brn = $_POST['brn'];
             $mail = $_POST['mail'];
 			$mob = $_POST['mob'];
-			$stu_fing_serial = $_POST['stu_fing_serial'];
 			
-
-
-            $stmt = $conn->prepare("INSERT INTO students(`reg_no`,'stu_fing_serial', `name`, `branch`, `email`,`mobile`, `created_by`, `created_on`)
-            VALUES(:regno,:stu_fing_serial, :nam, :branch, :email, :mobile, :creator, :creationtime)");
-            if($stmt->execute(array(
+            $stmt1 = $conn->prepare("INSERT INTO students(`reg_no`, `stu_fing_serial`, `name`, `branch`, `email`,`mobile`, `created_by`, `created_on` )
+			VALUES(:regno, :stud_fing_serial, :nam, :branch, :email, :mobile, :creator, :creationtime)");
+			
+			if($stmt1->execute(array(
 			"regno" => $regd_no,
-			'stu_fing_serial' => $stu_fing_serial,
+			"stud_fing_serial" => $stu_fing_serial,
             "nam" => $nm,
             "branch" => $brn,
             "email" => $mail,

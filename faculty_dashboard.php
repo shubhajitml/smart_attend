@@ -13,7 +13,7 @@
 			$brn = $_POST['brn'];
 
 
-            $stmt = $conn->prepare("INSERT INTO faculty_users(`fac_reg_no`,'fac_fing_serial', `name`, `email`,`mobile`, `branch`, `created_by`, `created_on` )
+            $stmt = $conn->prepare("INSERT INTO faculty_users(`fac_reg_no`,`fac_fing_serial`, `name`, `email`,`mobile`, `branch`, `created_by`, `created_on` )
             VALUES(:regno,:fac_fing_serial, :nam, :branch, :email, :mobile, :creator, :creationtime)");
             
             if($stmt->execute(array(
