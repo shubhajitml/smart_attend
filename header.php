@@ -51,9 +51,9 @@
             <a class="nav-link" href="subject_dashboard.php">Subjects</a>
           </li>
           
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="attendance_subject_report.php">Report</a>
-          </li>
+          </li> -->
           
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
