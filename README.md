@@ -10,15 +10,15 @@ Note: `sensor_data.php` is being used for receiving remote data <br>
 user name: mukeshbathre@gcekjr.ac.in <br>
 password: 09876<br>
 
-## Basic GIT commands
+## Basic GIT commands:
 **0. Pull from remote**:&nbsp; `git pull`<br>
 <br>**1. Check status**: &nbsp;`git status` <br>
 <br>**2. Add all unstaged Files**: &nbsp; `git add .` <br>
 <br>**or 2. Add specific unstaged Files**:&nbsp;  `git add sensor_data.php` <br>
 <br>**3. Commit the Staged files (a message is mandatory)** : &nbsp; `git commit "your message here (e.g. sensor_data script added)"` <br>
 <br>**4. Push the Staged Files (this will ask for authentication)**:&nbsp;  `git push` <br>
-
-## Using GIT for first time
+<br>
+## Using GIT for the first time: (optional)
 **0. Create a remote, empty repository on Github:** &nbsp; Login into github, Create an empty repo and copy the url (clone/download)&nbsp; <br>
 **1. Initialize the local repo**:&nbsp; Goto your project directory and type &nbsp;  `git init` <br>
 <br>**2. Connect to remote**:&nbsp;  `git remote add origin https://github.com/shubhajitml/smart_attendance.git` <br>
