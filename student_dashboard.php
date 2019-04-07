@@ -4,7 +4,7 @@
     { 
         if(isset($_POST['regd_no']) && !empty($_POST['regd_no'])&& isset($_POST['stu_fing_serial']) && !empty($_POST['stu_fing_serial'])  && isset($_POST['nm']) && !empty($_POST['nm']) && isset($_POST['brn']) && !empty($_POST['brn'])&& isset($_POST['mail']) && !empty($_POST['mail'])&& isset($_POST['mob']) && !empty($_POST['mob']) )
         {
-            print_r($_POST);
+            // print_r($_POST);
 			$regd_no = $_POST['regd_no'];
 			$stu_fing_serial = $_POST['stu_fing_serial'];
             $nm = $_POST['nm'];

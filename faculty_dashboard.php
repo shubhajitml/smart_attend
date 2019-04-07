@@ -1,22 +1,22 @@
 <?php
+
+	// ini_set('display_errors', 1);
+	// ini_set('display_startup_errors', 1);
+	// error_reporting(E_ALL);
 	include_once("header.php");
     if(isset($_POST['submit']))
     { //print_r($_POST);
         if(isset($_POST['regd_no']) && !empty($_POST['regd_no'])&& isset($_POST['fac_fing_serial']) && !empty($_POST['fac_fing_serial']) && isset($_POST['nm']) && !empty($_POST['nm']) && isset($_POST['brn']) && !empty($_POST['brn'])&& isset($_POST['mail']) && !empty($_POST['mail'])&& isset($_POST['mob']) && !empty($_POST['mob']) )
         {
-            print_r($_POST);
 			$regd_no = $_POST['regd_no'];
 			$fac_fing_serial = $_POST['fac_fing_serial'];
             $nm = $_POST['nm'];
             $mail = $_POST['mail'];
             $mob = $_POST['mob'];
 			$brn = $_POST['brn'];
-
-
-            $stmt = $conn->prepare("INSERT INTO faculty_users(`fac_reg_no`,`fac_fing_serial`, `name`, `email`,`mobile`, `branch`, `created_by`, `created_on` )
-            VALUES(:regno,:fac_fing_serial, :nam, :branch, :email, :mobile, :creator, :creationtime)");
-            
-            if($stmt->execute(array(
+			
+            $stmt1 = $conn->prepare("INSERT INTO `faculty_users`(`fac_reg_no`, `fac_fing_serial`, `name`, `email`, `mobile`, `branch`, `created_by`, `created_on`) VALUES (:regno, :fac_fing_serial,  :nam, :email, :mobile, :branch, :creator, :creationtime)");
+            if($stmt1->execute(array(
 			"regno" => $regd_no,
 			"fac_fing_serial" => $fac_fing_serial,
             "nam" => $nm,
@@ -32,7 +32,9 @@
             else
             {
                 echo 'NOT Success';
-            }
+			}
+			// echo $stmt1->queryString;
+
         }
         else
         {

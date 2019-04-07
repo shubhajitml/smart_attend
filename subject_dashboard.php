@@ -1,25 +1,27 @@
 <?php
+	// for debuging
+	// ini_set('display_errors', 1);
+	// ini_set('display_startup_errors', 1);
+	// error_reporting(E_ALL);
 	include_once("header.php");
     if(isset($_POST['submit']))
-    { //print_r($_POST);
+    { 
         if(isset($_POST['sub_code']) && !empty($_POST['sub_code']) && isset($_POST['nm']) && !empty($_POST['nm']) && isset($_POST['brn']) && !empty($_POST['brn'])&& isset($_POST['sem']) && !empty($_POST['sem'])&& isset($_POST['fac']) && !empty($_POST['fac']) )
         {
-            print_r($_POST);
             $sub_code = $_POST['sub_code'];
             $nm = $_POST['nm'];
             $branch = $_POST['brn'];
             $sem = $_POST['sem'];
             $fac = $_POST['fac'];
 
-
-            $stmt = $conn->prepare("INSERT INTO subjects(`subject_code`, 'subject_name', `branch`, `semester`,`fk_faculty_id`) VALUES(:sub,:nam, :brn, :sem, :fac_id)");
+            $stmt = $conn->prepare("INSERT INTO subjects(`subject_code`, `subject_name`, `branch`, `semester`,`fk_faculty_id`) VALUES(:sub, :nam, :brn, :sem, :fac_id)");
             
             if($stmt->execute(array(
             "sub" => $sub_code,
             "nam" => $nm,
             "brn" => $branch,
             "sem" => $sem,
-            "fac" => $fac
+            "fac_id" => $fac
             )))
             {
                 echo 'Success';
@@ -89,7 +91,7 @@
 								</div>
                                 <div class="form-group">
 									<label>Branch</label>
-									<input type="text" name="branch" class="form-control">
+									<input type="text" name="brn" class="form-control">
 								</div>
                                 <div class="form-group">
 									<label>Semester</label>
