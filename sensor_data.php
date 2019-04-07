@@ -15,7 +15,7 @@ if(isset($_GET['reg_no']) && !empty($_GET['reg_no']) && isset($_GET['fing_serial
         $stu_stmt   = $conn->prepare("UPDATE students SET stu_fing_serial=$fing_serial WHERE reg_no=".$reg_no);
         if ($stu_stmt->execute())
         {
-            echo 'Student record successfully inserted';
+            echo 'Student record successfully updated';
         }
         else
         {
@@ -27,7 +27,7 @@ if(isset($_GET['reg_no']) && !empty($_GET['reg_no']) && isset($_GET['fing_serial
         $fac_stmt   = $conn->prepare("UPDATE faculty_users SET fac_fing_serial=$fing_serial WHERE fac_reg_no=".$reg_no);
         if ($fac_stmt->execute())
         {
-            echo 'Faculty record successfully entered';
+            echo 'Faculty record successfully updated';
         }
         else
         {
