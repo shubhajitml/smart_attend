@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 06, 2019 at 07:11 PM
+-- Generation Time: Apr 08, 2019 at 02:38 AM
 -- Server version: 5.7.25-0ubuntu0.18.04.2
 -- PHP Version: 7.2.15-0ubuntu0.18.04.2
 
@@ -72,7 +72,9 @@ INSERT INTO `attendance_sheet` (`attandance_id`, `fk_subject_id`, `date`, `time`
 (6, 2, '2019-04-06', '17:47:19', 4),
 (7, 1, '2019-04-06', '17:47:42', 3),
 (8, 1, '2019-04-06', '17:48:40', 5),
-(9, 1, '2019-04-06', '17:48:44', 4);
+(9, 1, '2019-04-06', '17:48:44', 4),
+(10, 2, '2019-04-07', '22:19:54', 6),
+(12, 1, '2019-04-07', '22:21:57', 6);
 
 -- --------------------------------------------------------
 
@@ -98,7 +100,8 @@ CREATE TABLE `faculty_users` (
 
 INSERT INTO `faculty_users` (`fac_id`, `fac_reg_no`, `fac_fing_serial`, `name`, `email`, `mobile`, `branch`, `created_by`, `created_on`) VALUES
 (2, 3, 1, 'Sanjit Kumar Barik', 'sanjitbarik@gcekjr.ac.in', 9937583247, 'Computer Science and Engineering', 1, '2019-03-06 19:09:44'),
-(3, 2, 170, 'Omkar Pattanaik', 'omkarpattanaik@gcekjr.ac.in', 9439413440, 'Computer Science and Engineering', 1, '2019-03-06 19:08:08');
+(3, 2, 171, 'Omkar Pattanaik', 'omkarpattanaik@gcekjr.ac.in', 9439413440, 'Computer Science and Engineering', 1, '2019-03-06 19:08:08'),
+(5, 4, 272, 'Dhabal Pritam Sethi', 'dsethy@gcekjr.ac.in', 9875641230, 'Computer Science & Engineering', 1, '2019-04-08 00:31:38');
 
 -- --------------------------------------------------------
 
@@ -120,7 +123,9 @@ CREATE TABLE `fac_attendance_sheet` (
 
 INSERT INTO `fac_attendance_sheet` (`attandance_id`, `fk_subject_id`, `date`, `time`, `fk_faculty_id`) VALUES
 (1, 2, '2019-04-06', '17:45:33', 3),
-(2, 1, '2019-04-06', '17:47:33', 2);
+(2, 1, '2019-04-06', '17:47:33', 2),
+(3, 2, '2019-04-07', '22:18:55', 3),
+(4, 1, '2019-04-07', '22:21:26', 2);
 
 -- --------------------------------------------------------
 
@@ -150,7 +155,8 @@ INSERT INTO `students` (`stu_id`, `reg_no`, `stu_fing_serial`, `name`, `branch`,
 (3, 1501104080, 150, 'Shubhajit Das', 'Computer Science and Engineering', 'shubhajitdas121@gmail.com', 8280144660, 1, '2019-03-06 21:53:54'),
 (4, 1501104054, 155, 'Amitabh Sekhar Mishra', 'Computer Science and Engineering', 'amitabhmishra592@gmail.com', 7064207517, 155, '2019-03-09 23:04:16'),
 (5, 1501104058, 154, 'Ashirbad Samantaray', 'Computer Science and Engineering', 'contact@ashirbad.me', 7008917985, 1, '2019-03-09 23:08:08'),
-(6, 1501104055, 153, 'Ananya Jena', 'Computer Science and Engineering', 'ajena635@gmail.com', 7978079693, 1, '2019-03-09 23:12:12');
+(6, 1501104055, 156, 'Ananya Jena', 'Computer Science and Engineering', 'ajena635@gmail.com', 7978079693, 1, '2019-03-09 23:12:12'),
+(8, 1501104065, 158, 'Heena Sahu', 'Computer Science & Engineering', 'heenasahu66@gmail.com', 7504875035, 1, '2019-04-07 23:57:21');
 
 -- --------------------------------------------------------
 
@@ -173,7 +179,8 @@ CREATE TABLE `subjects` (
 
 INSERT INTO `subjects` (`subject_id`, `subject_code`, `subject_name`, `branch`, `semester`, `fk_faculty_id`) VALUES
 (1, 'PCS8J002', 'Expert Systems', 'Computer Science and Engineering', 8, 2),
-(2, 'PCP8H001', 'Entrepreneurship Development', 'Computer Science and Engineering', 8, 3);
+(2, 'PCP8H001', 'Entrepreneurship Development', 'Computer Science and Engineering', 8, 3),
+(3, 'Y897675', 'Math', 'Computer Science & Engineering', 5, 2);
 
 --
 -- Indexes for dumped tables
@@ -236,27 +243,27 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `attendance_sheet`
 --
 ALTER TABLE `attendance_sheet`
-  MODIFY `attandance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `attandance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `faculty_users`
 --
 ALTER TABLE `faculty_users`
-  MODIFY `fac_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `fac_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `fac_attendance_sheet`
 --
 ALTER TABLE `fac_attendance_sheet`
-  MODIFY `attandance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `attandance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `stu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `stu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
-  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
